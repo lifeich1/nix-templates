@@ -23,8 +23,10 @@
           pname = "template";
           version = "0.1.0";
           src = ./.;
-          buildAndTestSubdir = ./template;
           cargoLock.lockFile = ./Cargo.lock;
+          postInstall = ''
+            rm -f $out/bin/xtask # devops, strip from release
+          '';
 
           # For other makeRustPlatform features see:
           # https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/rust.section.md#cargo-features-cargo-features
