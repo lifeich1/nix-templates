@@ -3,5 +3,6 @@ members = [
   "template",
   "xtask",
 ]
+default-members = ["template"]
 resolver = "2"
 
